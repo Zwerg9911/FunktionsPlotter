@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,6 +49,14 @@
             this.txtskal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtymax = new System.Windows.Forms.TextBox();
+            this.txtymin = new System.Windows.Forms.TextBox();
+            this.txtxmax = new System.Windows.Forms.TextBox();
+            this.txtxmin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -79,12 +88,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(663, 41);
+            this.button3.Location = new System.Drawing.Point(662, 523);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtboxa
@@ -205,31 +215,103 @@
             this.txtskal.Name = "txtskal";
             this.txtskal.Size = new System.Drawing.Size(100, 20);
             this.txtskal.TabIndex = 21;
-            this.txtskal.Text = "10";
+            this.txtskal.Text = "1";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(396, 15);
+            this.label9.Location = new System.Drawing.Point(619, 58);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 13);
+            this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 22;
-            this.label9.Text = "Definitionsbereich";
+            this.label9.Text = "X-Min";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(430, 44);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 13);
+            this.label10.Size = new System.Drawing.Size(34, 13);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Skalierung";
+            this.label10.Text = "Scale";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(616, 136);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Y-Max";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(619, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Y-Min";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(616, 84);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "X-Max";
+            // 
+            // txtymax
+            // 
+            this.txtymax.Location = new System.Drawing.Point(659, 129);
+            this.txtymax.Name = "txtymax";
+            this.txtymax.Size = new System.Drawing.Size(40, 20);
+            this.txtymax.TabIndex = 27;
+            this.txtymax.Text = "10";
+            // 
+            // txtymin
+            // 
+            this.txtymin.Location = new System.Drawing.Point(659, 103);
+            this.txtymin.Name = "txtymin";
+            this.txtymin.Size = new System.Drawing.Size(40, 20);
+            this.txtymin.TabIndex = 28;
+            this.txtymin.Text = "10";
+            // 
+            // txtxmax
+            // 
+            this.txtxmax.Location = new System.Drawing.Point(659, 77);
+            this.txtxmax.Name = "txtxmax";
+            this.txtxmax.Size = new System.Drawing.Size(40, 20);
+            this.txtxmax.TabIndex = 29;
+            this.txtxmax.Text = "10";
+            // 
+            // txtxmin
+            // 
+            this.txtxmin.Location = new System.Drawing.Point(659, 51);
+            this.txtxmin.Name = "txtxmin";
+            this.txtxmin.Size = new System.Drawing.Size(40, 20);
+            this.txtxmin.TabIndex = 30;
+            this.txtxmin.Text = "10";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 682);
+            this.ClientSize = new System.Drawing.Size(789, 682);
+            this.Controls.Add(this.txtxmin);
+            this.Controls.Add(this.txtxmax);
+            this.Controls.Add(this.txtymin);
+            this.Controls.Add(this.txtymax);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtskal);
@@ -279,6 +361,14 @@
         private System.Windows.Forms.TextBox txtskal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtymax;
+        private System.Windows.Forms.TextBox txtymin;
+        private System.Windows.Forms.TextBox txtxmax;
+        private System.Windows.Forms.TextBox txtxmin;
     }
 }
 
